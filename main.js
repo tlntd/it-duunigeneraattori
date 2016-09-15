@@ -87,7 +87,9 @@
     "er\xE4opas",
     "haltia",
     "vuorenpeikko",
-    "kyborgi"
+    "kyborgi",
+    "set\xE4",
+    "\xE4itihahmo"
   ]
 
   function init() {
