@@ -26,7 +26,14 @@
     "IT-",
     "Frontti",
     "B\xE4kk\xE4ri",
-    "Integraatio"
+    "Integraatio",
+    "Objekti",
+    "Funktio",
+    "Olio",
+    "Versionhallinta",
+    "Projekti",
+    "Tieto\xADturva",
+    "Kyber"
   ]
 
   var midParts = [
@@ -43,7 +50,10 @@
     "putkiston",
     "hautaus\xADmaan",
     "putkan",
-    "tiimin"
+    "tiimin",
+    "teoksen",
+    "orkesterin",
+    "ninjojen"
   ]
 
   var thirdParts = [
@@ -89,7 +99,8 @@
     "vuorenpeikko",
     "kyborgi",
     "set\xE4",
-    "\xE4itihahmo"
+    "\xE4itihahmo",
+    "lamauttaja"
   ]
 
   function init() {
