@@ -114,6 +114,10 @@
   }
 
   function newJobTitle() {
+    if (window.ga) {
+      ga('send', 'event', 'Create-button', 'Click')
+    }
+
     var title = randomTitle()
     jobTitleArea().textContent = title
     recreateTwitterWithText("Uusi ammattini on: " + title)
@@ -121,7 +125,7 @@
 
   function recreateTwitterWithText(text) {
     twitterButton().setAttribute("data-text", text)
-    if (twttr && twttr.widgets) {
+    if (window.twttr && twttr.widgets) {
       firstElementByClass("twitter-share-button-rendered").remove()
       var btn = document.createElement("a")
       btn.setAttribute("class", "twitter-share-button")
