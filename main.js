@@ -33,7 +33,7 @@
     "puuman",
     "sauruksen",
     "sonnin",
-    "tikkarin",
+    "muplauttimen",
     "kaivoksen",
     "louhoksen",
     "uima-altaan",
@@ -103,7 +103,23 @@
   function newJobTitle() {
     var title = randomTitle()
     jobTitleArea().textContent = title
-    twitterButton().setAttribute("data-text", "Uusi ammattini on: " + title)
+    recreateTwitterWithText("Uusi ammattini on: " + title)
+  }
+
+  function recreateTwitterWithText(text) {
+    twitterButton().setAttribute("data-text", text)
+    if (twttr && twttr.widgets) {
+      firstElementByClass("twitter-share-button-rendered").remove()
+      var btn = document.createElement("a")
+      btn.setAttribute("class", "twitter-share-button")
+      btn.setAttribute("href", "https://twitter.com/share")
+      btn.setAttribute("data-hashtags", "titteligeneraattori")
+      btn.setAttribute("data-text", text)
+
+      firstElementByClass("twitter-share-container").appendChild(btn)
+      twttr.widgets.load()
+    }
+
   }
 
   function randomTitle() {
