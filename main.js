@@ -156,7 +156,7 @@
   function randomTitle() {
     var classifier = (randInt(4) == 0 ? random(classifiers) + " " : "")
     var firstpart = random(firstParts)
-    var hyphen = firstpart.endsWith() ? "\u2011" : "\xAD"
+    var hyphen = firstpart.endsWith("\u2011") ? "" : "\xAD"
     var midpart = (randInt(3) == 0 ? hyphen + random(midParts) + " " : "\xAD")
     var thirdpart = random(thirdParts)
 
