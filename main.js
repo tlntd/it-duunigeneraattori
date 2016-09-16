@@ -1,22 +1,34 @@
 (function() {
   window.addEventListener("load", init)
 
+  var classifiers = [
+    "Oppimishaluinen",
+    "Innostunut",
+    "N\xE4lk\xE4inen",
+    "Startup-henkinen",
+    "Dynaaminen",
+    "Nuorekas",
+    "Kiimainen",
+    "Intohimoinen",
+    "Jumalainen"
+  ]
+
   var firstParts = [
     "Data",
-    "Big data-",
-    "Node-",
-    "Scala-",
-    "Java-",
-    "iOS-",
-    "IoT-",
-    "Devops-",
-    "Android-",
-    "J2EE-",
-    "COBOL-",
+    "Big data\u2011",
+    "Node\u2011",
+    "Scala\u2011",
+    "Java\u2011",
+    "iOS\u2011",
+    "IoT\u2011",
+    "Devops\u2011",
+    "Android\u2011",
+    "J2EE\u2011",
+    "COBOL\u2011",
     "Pilvi",
-    "AWS-",
-    "Clojure-",
-    "Data science -",
+    "AWS\u2011",
+    "Clojure\u2011",
+    "Data science \u2011",
     "Ohjelmisto",
     "Digi\xADmarkkinointi",
     "B2B-",
@@ -100,7 +112,9 @@
     "kyborgi",
     "set\xE4",
     "\xE4itihahmo",
-    "lamauttaja"
+    "lamauttaja",
+    "ninja",
+    "v\xE4lsk\xE4ri"
   ]
 
   function init() {
@@ -140,9 +154,16 @@
   }
 
   function randomTitle() {
-    return random(firstParts) +
-           (randInt(3) == 0 ? "\xAD" + random(midParts) + " " : "\xAD") +
-           random(thirdParts)
+    var classifier = (randInt(4) == 0 ? random(classifiers) + " " : "")
+    var firstpart = random(firstParts)
+    var hyphen = firstpart.endsWith() ? "\u2011" : "\xAD"
+    var midpart = (randInt(3) == 0 ? hyphen + random(midParts) + " " : "\xAD")
+    var thirdpart = random(thirdParts)
+
+    return classifier +
+           firstpart +
+           midpart +
+           thirdpart
   }
 
   function button() {
