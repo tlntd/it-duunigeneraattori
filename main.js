@@ -144,7 +144,7 @@
       var btn = document.createElement("a")
       btn.setAttribute("class", "twitter-share-button")
       btn.setAttribute("href", "https://twitter.com/share")
-      btn.setAttribute("data-hashtags", "titteligeneraattori")
+      btn.setAttribute("data-hashtags", "iamtalented")
       btn.setAttribute("data-text", text)
 
       firstElementByClass("twitter-share-container").appendChild(btn)
